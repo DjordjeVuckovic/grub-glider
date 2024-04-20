@@ -1,1 +1,1 @@
-# grub-glider
+# Grub glider - food delivery app

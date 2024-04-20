@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BBC2BCA4-A6A9-4179-8097-D80B25B4762C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService", "OrderService", "{50550D6C-EF74-446B-8459-77B8609C77B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.OrderService", "src\OrderService\GrubGlider.OrderService\GrubGlider.OrderService.csproj", "{135F6912-1B4D-40FA-9EFC-570EAAF53F0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D11AE00-FE46-481F-B8C9-59107604A3F7}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KitchenService", "KitchenService", "{20E21097-DB14-483F-AAD7-D4BA677DB709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.KitchenService", "src\KitchenService\GrubGlider.KitchenService\GrubGlider.KitchenService.csproj", "{83DFB146-49E0-46DD-9A55-91C1EC672574}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaymentService", "PaymentService", "{E770A753-C978-4BAF-A358-C45304624D32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.PaymentService", "src\PaymentService\GrubGlider.PaymentService\GrubGlider.PaymentService.csproj", "{39EAC280-8BB5-4CAC-ABC8-F42D3CBE937E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotificationService", "NotificationService", "{429B99EB-317D-4159-9F63-E12CE3F30C31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.NotificationService", "src\NotificationService\GrubGlider.NotificationService\GrubGlider.NotificationService.csproj", "{2EDB314C-17A2-4A46-8F7E-E718E630DCAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{9E800DA1-E1D7-4F80-8A81-84BB1D272105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.BuildingBlocks", "src\Shared\GrubGlider.BuildingBlocks\GrubGlider.BuildingBlocks.csproj", "{A2F37FEA-C315-4F5E-ACDC-79641FCDE319}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OfferingService", "OfferingService", "{FA50AE24-38AF-4C40-A741-47460AD6CBFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.OfferingService", "src\OfferingService\GrubGlider.OfferingService\GrubGlider.OfferingService.csproj", "{A59C5387-88FA-49C5-904F-5F158839FD19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50550D6C-EF74-446B-8459-77B8609C77B3} = {BBC2BCA4-A6A9-4179-8097-D80B25B4762C}
+		{135F6912-1B4D-40FA-9EFC-570EAAF53F0A} = {50550D6C-EF74-446B-8459-77B8609C77B3}
+		{20E21097-DB14-483F-AAD7-D4BA677DB709} = {BBC2BCA4-A6A9-4179-8097-D80B25B4762C}
+		{83DFB146-49E0-46DD-9A55-91C1EC672574} = {20E21097-DB14-483F-AAD7-D4BA677DB709}
+		{E770A753-C978-4BAF-A358-C45304624D32} = {BBC2BCA4-A6A9-4179-8097-D80B25B4762C}
+		{39EAC280-8BB5-4CAC-ABC8-F42D3CBE937E} = {E770A753-C978-4BAF-A358-C45304624D32}
+		{429B99EB-317D-4159-9F63-E12CE3F30C31} = {BBC2BCA4-A6A9-4179-8097-D80B25B4762C}
+		{2EDB314C-17A2-4A46-8F7E-E718E630DCAE} = {429B99EB-317D-4159-9F63-E12CE3F30C31}
+		{9E800DA1-E1D7-4F80-8A81-84BB1D272105} = {BBC2BCA4-A6A9-4179-8097-D80B25B4762C}
+		{A2F37FEA-C315-4F5E-ACDC-79641FCDE319} = {9E800DA1-E1D7-4F80-8A81-84BB1D272105}
+		{FA50AE24-38AF-4C40-A741-47460AD6CBFF} = {BBC2BCA4-A6A9-4179-8097-D80B25B4762C}
+		{A59C5387-88FA-49C5-904F-5F158839FD19} = {FA50AE24-38AF-4C40-A741-47460AD6CBFF}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{135F6912-1B4D-40FA-9EFC-570EAAF53F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135F6912-1B4D-40FA-9EFC-570EAAF53F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135F6912-1B4D-40FA-9EFC-570EAAF53F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135F6912-1B4D-40FA-9EFC-570EAAF53F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DFB146-49E0-46DD-9A55-91C1EC672574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DFB146-49E0-46DD-9A55-91C1EC672574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DFB146-49E0-46DD-9A55-91C1EC672574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DFB146-49E0-46DD-9A55-91C1EC672574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EAC280-8BB5-4CAC-ABC8-F42D3CBE937E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EAC280-8BB5-4CAC-ABC8-F42D3CBE937E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EAC280-8BB5-4CAC-ABC8-F42D3CBE937E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EAC280-8BB5-4CAC-ABC8-F42D3CBE937E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EDB314C-17A2-4A46-8F7E-E718E630DCAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDB314C-17A2-4A46-8F7E-E718E630DCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDB314C-17A2-4A46-8F7E-E718E630DCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDB314C-17A2-4A46-8F7E-E718E630DCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F37FEA-C315-4F5E-ACDC-79641FCDE319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F37FEA-C315-4F5E-ACDC-79641FCDE319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F37FEA-C315-4F5E-ACDC-79641FCDE319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F37FEA-C315-4F5E-ACDC-79641FCDE319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59C5387-88FA-49C5-904F-5F158839FD19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59C5387-88FA-49C5-904F-5F158839FD19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59C5387-88FA-49C5-904F-5F158839FD19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59C5387-88FA-49C5-904F-5F158839FD19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

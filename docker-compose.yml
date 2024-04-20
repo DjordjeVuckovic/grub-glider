@@ -1,0 +1,28 @@
+﻿version: '3.8'
+services:
+  grub-glider.order-service:
+    image: grub-glider.order-service
+    build:
+      context: .
+      dockerfile: src/OrderService/GrubGlider.OrderService/Dockerfile
+  grub-glider.kitchen-service:
+    image: grub-glider.kitchen-service
+    build:
+      context: .
+      dockerfile: src/KitchenService/GrubGlider.KitchenService/Dockerfile
+  grub-glider.payment-service:
+    image: grub-glider.payment-service
+    build:
+      context: .
+      dockerfile: src/PaymentService/GrubGlider.PaymentService/Dockerfile
+  grudglider.menuandfoodservice:
+    image: grudglider.menuandfoodservice
+    build:
+      context: .
+      dockerfile: src/MenuAndFoodService/GrudGlider.MenuAndFoodService/Dockerfile
+
+  grubglider.offeringservice:
+    image: grubglider.offeringservice
+    build:
+      context: .
+      dockerfile: src/OfferingService/GrubGlider.OfferingService/Dockerfile

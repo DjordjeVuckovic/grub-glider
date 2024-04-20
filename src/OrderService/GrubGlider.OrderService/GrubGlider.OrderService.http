@@ -1,0 +1,6 @@
+@GrubGlider.OrderService_HostAddress = http://localhost:5054
+
+GET {{GrubGlider.OrderService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

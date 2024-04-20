@@ -1,0 +1,21 @@
+﻿version: '3.8'
+services:
+  grub-glider.db:
+    image: postgres:16.2
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: grub_glider
+    ports:
+      - "50001:5432"
+    volumes:
+      - grub-glider.db-data:/var/lib/postgresql/data
+    networks: 
+      - grub-glider.network
+  
+volumes:
+  grub-glider.db-data:
+    driver: local
+networks:
+    grub-glider.network:
+        driver: bridge
