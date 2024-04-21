@@ -4,6 +4,7 @@ using GrubGlider.BuildingBlocks.Api.Responses;
 using GrubGlider.BuildingBlocks.Endpoints;
 using GrubGlider.OfferingService.GrubItems.Factories;
 using GrubGlider.OfferingService.GrubItems.Types;
+using GrubGlider.OfferingService.Menus.Types;
 using Marten;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -60,6 +61,14 @@ internal class CreateGrubItemHandler(IDocumentStore store)
 
     public async Task<Result<Guid>> Handle(Command request, CancellationToken cancellationToken)
     {
+        var menu = await _session.Query<MenuDao>().FirstOrDefaultAsync(
+            x => x.Id == request.MenuId,
+            token: cancellationToken
+        );
+        if (menu is null)
+        {
+            return Result.Failure<Guid>($"Menu with id {request.MenuId} not found");
+        }
         var itemOrError = GrubItem.Create(
             request.Name,
             request.Description,
@@ -70,6 +79,10 @@ internal class CreateGrubItemHandler(IDocumentStore store)
         {
             var dao = GrubItemFactory.ToDao(x, request.MenuId);
             _session.Insert(dao);
+            
+            menu.Items.Add(dao.Id);
+            _session.Update(menu);
+            
             await _session.SaveChangesAsync(cancellationToken);
             return Result.Success(dao.Id);
         });

@@ -13,7 +13,8 @@ namespace GrubGlider.OfferingService.Menus;
 internal record CreteMenuRequest(
     string Name,
     string Description,
-    Restaurant Restaurant
+    Restaurant Restaurant,
+    IEnumerable<Guid> Items
 );
 
 public class CreateMenuEndpoint : IEndpointGroup
@@ -29,7 +30,8 @@ public class CreateMenuEndpoint : IEndpointGroup
                 var createFoodCommand = new CreateMenuHandler.Command(
                     request.Name,
                     request.Description,
-                    request.Restaurant
+                    request.Restaurant,
+                    request.Items
                 );
                 var result = await sender.Send(createFoodCommand);
                 return result.ToSuccessOrBadRequest(
@@ -44,16 +46,18 @@ public class CreateMenuEndpoint : IEndpointGroup
 internal class CreateMenuHandler(IDocumentStore store) : IRequestHandler<CreateMenuHandler.Command, Result<Guid>>
 {
     private readonly IDocumentSession _session = store.LightweightSession();
+
     internal record Command(
         string Name,
         string Description,
-        Restaurant Restaurant
+        Restaurant Restaurant,
+        IEnumerable<Guid> Items
     ) : IRequest<Result<Guid>>;
 
     public async Task<Result<Guid>> Handle(Command request, CancellationToken cancellationToken)
     {
-        var menu = new MenuDao(request.Name, request.Description, request.Restaurant);
-        
+        var menu = new MenuDao(request.Name, request.Description, request.Restaurant, request.Items.ToList());
+
         _session.Insert(menu);
         await _session.SaveChangesAsync(cancellationToken);
         return Result.Success(menu.Id);

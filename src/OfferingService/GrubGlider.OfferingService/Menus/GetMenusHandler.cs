@@ -33,13 +33,11 @@ internal class GetMenusHandler(IDocumentStore store, ILogger<GetMenusHandler> lo
     public async Task<IEnumerable<Menu>> Handle(Query request, CancellationToken cancellationToken)
     {
         logger.LogInformation("Fetching all menus ...");
-        var menus = new List<MenuDao>();
+        var items = new List<GrubItemDao>();
 
-        var query = _session
-            .Query<GrubItemDao>()
-            .Include(x => x.MenuId, menus);
-        
-        var items = await query
+        var menus = await _session
+            .Query<MenuDao>()
+            .Include(x => x.Items, items)
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -49,7 +47,9 @@ internal class GetMenusHandler(IDocumentStore store, ILogger<GetMenusHandler> lo
             Name = menu.Name,
             Description = menu.Description,
             Restaurant = menu.Restaurant,
-            GrubItems = items.Where(x => x.MenuId == menu.Id).Select(GrubItemFactory.ToDomain)
+            GrubItems = items
+                .Where(x => x.MenuId == menu.Id)
+                .Select(GrubItemFactory.ToDomain)
         });
     }
 }

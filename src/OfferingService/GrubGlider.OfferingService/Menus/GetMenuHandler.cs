@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using GrubGlider.BuildingBlocks.Api;
+using GrubGlider.BuildingBlocks.Api.Responses;
 using GrubGlider.BuildingBlocks.Endpoints;
 using GrubGlider.OfferingService.GrubItems.Factories;
 using GrubGlider.OfferingService.GrubItems.Types;
@@ -35,15 +36,11 @@ internal class GetMenuHandler(IDocumentStore store, ILogger<GetMenuHandler> logg
 
     public async Task<Result<Menu>> Handle(Query request, CancellationToken cancellationToken)
     {
-        MenuDao? menu = null;
-        var query = _session
-            .Query<GrubItemDao>()
-            .Include<MenuDao>(x => x.MenuId, m => menu = m)
-            .Where(x => x.MenuId == request.Id);
-        
-        var items = await query
-            .ToListAsync(cancellationToken)
-            .ConfigureAwait(false);
+        var items = new List<GrubItemDao>();
+        var menu = await _session
+            .Query<MenuDao>()
+            .Include(x => x.Items, items)
+            .FirstOrDefaultAsync(x => x.Id == request.Id,cancellationToken);
 
         if (menu is null)
         {

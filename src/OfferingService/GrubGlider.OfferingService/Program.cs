@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text;
 using dotenv.net;
 using GrubGlider.BuildingBlocks.Api;
+using GrubGlider.BuildingBlocks.Api.Handlers;
 using GrubGlider.BuildingBlocks.Configuration;
 using GrubGlider.BuildingBlocks.Endpoints;
 using GrubGlider.OfferingService.Extensions;
@@ -26,7 +27,12 @@ builder.Services.AddOptions(builder.Configuration);
 builder.Services.AddMediator();
 builder.Services.AddPersistence(builder.Configuration.IsDevelopment());
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
 var app = builder.Build();
+
+app.UseExceptionHandler();
 
 if (app.Environment.IsDevelopment())
 {
@@ -34,7 +40,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
 }
+
 app.UseCors(CorsPolicyExtension.PolicyName);
+
 app.UseRouting();
 
 app.MapEndpoints(Assembly.GetExecutingAssembly());

@@ -10,15 +10,18 @@ public class MenuDao
     public string Name { get; init; } = string.Empty;
     public Restaurant Restaurant { get; init; }
     
+    public List<Guid> Items { get; set; } = Enumerable.Empty<Guid>().ToList();
+    
     [JsonConstructor]
     public MenuDao()
     {
     }
 
-    public MenuDao(string name, string description, Restaurant restaurant)
+    public MenuDao(string name, string description, Restaurant restaurant, List<Guid> items)
     {
         Description = description;
         Name = name;
         Restaurant = restaurant;
+        Items = items;
     }
 }
