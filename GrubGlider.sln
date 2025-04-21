@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OfferingService", "Offering
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.OfferingService", "src\OfferingService\GrubGlider.OfferingService\GrubGlider.OfferingService.csproj", "{A59C5387-88FA-49C5-904F-5F158839FD19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrubGlider.Messaging.Contracts", "src\Shared\GrubGlider.Messaging.Contracts\GrubGlider.Messaging.Contracts.csproj", "{121A0BE2-5653-4AF1-8EBE-DC00996E5877}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,7 @@ Global
 		{A2F37FEA-C315-4F5E-ACDC-79641FCDE319} = {9E800DA1-E1D7-4F80-8A81-84BB1D272105}
 		{FA50AE24-38AF-4C40-A741-47460AD6CBFF} = {BBC2BCA4-A6A9-4179-8097-D80B25B4762C}
 		{A59C5387-88FA-49C5-904F-5F158839FD19} = {FA50AE24-38AF-4C40-A741-47460AD6CBFF}
+		{121A0BE2-5653-4AF1-8EBE-DC00996E5877} = {9E800DA1-E1D7-4F80-8A81-84BB1D272105}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{135F6912-1B4D-40FA-9EFC-570EAAF53F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -75,5 +78,9 @@ Global
 		{A59C5387-88FA-49C5-904F-5F158839FD19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A59C5387-88FA-49C5-904F-5F158839FD19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A59C5387-88FA-49C5-904F-5F158839FD19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{121A0BE2-5653-4AF1-8EBE-DC00996E5877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121A0BE2-5653-4AF1-8EBE-DC00996E5877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121A0BE2-5653-4AF1-8EBE-DC00996E5877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121A0BE2-5653-4AF1-8EBE-DC00996E5877}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
